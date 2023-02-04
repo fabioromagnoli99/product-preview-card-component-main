@@ -1,0 +1,179 @@
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Dark-cyan-hover: hsl(158, 36%, 20%);
+  --Cream: hsl(30, 38%, 92%);
+
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2 {
+  line-height: 1;
+}
+
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  color: var(--Dark-grayish-blue);
+  font-size: 0.875rem;
+  background-color: var(--Cream);
+
+  /* only for this project */
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+
+.container_price {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.product {
+  display: grid;
+  background-color: var(--White);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+@media (min-width: 600px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.product__content {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.product__content p.p1 {
+  font-family: "Montserrat", sans;
+  font-size: 0.825rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  color: var(--Dark-grayish-blue);
+}
+
+.product__content h1 {
+  font-family: "Fraunces", sans;
+  font-size: 2rem;
+  color: var(--Very-dark-blue);
+}
+
+.product__content p.p2 {
+  font-family: "Montserrat", sans;
+  color: var(--Dark-grayish-blue);
+}
+
+.container_price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.container_price span.s1 {
+  font-family: "Fraunces", sans;
+  color: var(--Dark-cyan);
+  font-size: 2rem;
+}
+
+.container_price span.s2 {
+  font-family: "Montserrat", sans;
+  color: var(--Dark-grayish-blue);
+  font-size: 0.825rem;
+  text-decoration: line-through;
+}
+
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5em 1.5em;
+  border: 0;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-family: "Montserrat", sans;
+  font-size: 0.925rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--Dark-cyan);
+  color: var(--White);
+}
+
+button:is(:hover, :focus) {
+  background: var(--Dark-cyan-hover);
+}
